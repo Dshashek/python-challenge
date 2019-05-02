@@ -1,8 +1,6 @@
 import csv
 import os
 
-records = 0
-
 #open CSV
 csvpath = "election_data.csv"
 
