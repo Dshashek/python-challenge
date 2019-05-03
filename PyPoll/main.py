@@ -60,7 +60,7 @@ print(f"-------------------------")
 print(f"Total Votes: {totalvotes}")
 print(f"-------------------------")
 for candidate in candidates:
-    print(f"{candidates[counter]}: {candidatepercent[counter]} ({candidatevotes[0]})")
+    print(f"{candidates[counter]}: {candidatepercent[counter]} ({candidatevotes[counter]})")
     counter = counter + 1
 print(f"-------------------------")
 if Tie > 1:
@@ -77,7 +77,7 @@ f.writelines(f"-------------------------\n")
 f.writelines(f"Total Votes: {totalvotes}\n")
 f.writelines(f"-------------------------\n")
 for candidate in candidates:
-    f.writelines(f"{candidates[counter]}: {candidatepercent[counter]} ({candidatevotes[0]})\n")
+    f.writelines(f"{candidates[counter]}: {candidatepercent[counter]} ({candidatevotes[counter]})\n")
     counter = counter + 1
 f.writelines(f"-------------------------\n")
 if Tie > 1:
