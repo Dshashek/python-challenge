@@ -49,6 +49,7 @@ with open (csvpath, newline='') as csvfile:
 
     #Find the Candidate with the most votes
     winnerTotal = max(candidatevotes)
+    Tie = candidatevotes.count(winnerTotal)
     winnerLoc = candidatevotes.index(winnerTotal)
     winner = candidates[winnerLoc]
 
@@ -62,7 +63,9 @@ for candidate in candidates:
     print(f"{candidates[counter]}: {candidatepercent[counter]} ({candidatevotes[0]})")
     counter = counter + 1
 print(f"-------------------------")
-print(f"Winner: {winner}")
+if Tie > 1:
+    print(f"Winner: It's a tie!")
+else: print(f"Winner: {winner}")
 print(f"-------------------------")
 
 #Create Text File and Print results to it
@@ -77,6 +80,8 @@ for candidate in candidates:
     f.writelines(f"{candidates[counter]}: {candidatepercent[counter]} ({candidatevotes[0]})\n")
     counter = counter + 1
 f.writelines(f"-------------------------\n")
-f.writelines(f"Winner: {winner}\n")
+if Tie > 1:
+    f.writelines(f"Winner: It's a tie!\n")
+else: f.writelines(f"Winner: {winner}\n")
 f.writelines(f"-------------------------\n")
 f.close() 
